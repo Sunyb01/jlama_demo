@@ -78,7 +78,9 @@ public class Main {
 
     public static void chat() {
         ChatLanguageModel model = JlamaChatModel.builder()
-                .modelCachePath(Path.of("./models"))
+                // 模型目录
+                .workingDirectory(Path.of("./models"))
+                // 模型名称
                 .modelName("deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B")
                 .maxTokens(8192)
                 .temperature(0.7f)
